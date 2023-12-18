@@ -1,0 +1,305 @@
+
+				Weekly Assignment # 01 (Sun, 26-Nov-2023)
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 1: Write a program that calculates the area of a rectangle.
+*/
+
+class Rectangle {
+  private length: number;
+  private width: number;
+
+  constructor(length: number, width: number) {
+    this.length = length;
+    this.width = width;
+  }
+
+  calculateArea(): Number {
+    return this.length * this.width;
+  }
+}
+
+const rectangle = new Rectangle(5, 8);
+const area = rectangle.calculateArea();
+
+console.log(`The area of the rectangle is ${area}.`);
+
+// Method 2: with arrow function
+
+let rectangleArea = (width: number, height: number) => {
+  return console.log(`Area of rectangle: ${length * width}`);
+};
+
+let len: number = 5;
+let width: number = 10;
+
+rectangleArea(len, width);
+rectangleArea(10, 20);
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 2: Write a program that takes input and calculates the volume of a cube.
+*/
+
+class Cube {
+  private sideLength: number;
+
+  constructor(sideLength: number) {
+    this.sideLength = sideLength;
+  }
+
+  calculateVolumeOfCube(): number {
+    return Math.pow(this.sideLength, 3);
+  }
+}
+
+const cube = new Cube(6);
+const volume = cube.calculateVolumeOfCube();
+
+console.log(`The volume of the cube is ${volume}.`);
+
+// Method 2: with arrow function
+
+const cubeVolume = (sideLength: number) => {
+  return console.log(`Volume of Cube is: ${sideLength ** 3}`);
+};
+
+cubeVolume(3);
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 3: Write a program that checks if a given number is positive, negative, or zero.
+*/
+
+function checknumber(numberCheck: number): string {
+  if (numberCheck > 0) {
+    return "Postive";
+  } else if (numberCheck < 0) {
+    return "Negative";
+  } else {
+    return "Zero";
+  }
+}
+
+const inputNumber: number = 9;
+const result: string = checknumber(inputNumber);
+
+console.log(`Given number is ${inputNumber} which is ${result}.`);
+
+// Method 2: with arrow function
+
+const checkNumber = (num: number) => {
+  if (num > 0) {
+    console.log(`Number ${num} is Positive`);
+  } else if (num < 0) {
+    console.log(`Number ${num} is Negative`);
+  } else {
+    return console.log(`Number is Zero`);
+  }
+};
+
+checkNumber(1);
+checkNumber(-6);
+checkNumber(0);
+
+export{};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 4: Write a program that checks if a given number is even or odd.
+*/
+
+function checkEvenOrOdd(numberCheck: number): string {
+  if (numberCheck % 2 === 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+
+const inputNumber: number = 5;
+const resultEvenOrOdd: string = checkEvenOrOdd(inputNumber);
+
+console.log(`Given number is ${inputNumber} which is ${result}.`);
+
+// Method 2
+
+let myNum: number = 2;
+if (myNum % 2 == 0) {
+  console.log("Number is even");
+} else {
+  console.log("Number is odd");
+}
+
+// Method 3: with arrow function
+
+const evenOrOdd = (num: number) => {
+  if (num % 2 === 0) {
+    return console.log(`${num} is an even number`);
+  } else {
+    return console.log(`${num} is not an even number`);
+  }
+};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 5: Write a program that determines if a person is eligible to vote based on their age.
+*/
+
+function checkVotingEligibility(age: number): string {
+  if (age >= 18) {
+    return "Eligible to vote";
+  } else {
+    return "Not eligible to vote";
+  }
+}
+
+// Example usage:
+const personAge: number = 22;
+const eligibilityStatus: string = checkVotingEligibility(personAge);
+console.log(`At the age of ${personAge}, the person is ${eligibilityStatus}.`);
+
+// Method 2
+
+// VotingEligibility
+let ageVotingEligibility = 10;
+
+if (ageVotingEligibility >= 18) {
+  console.log("You are eligible to vote");
+} else {
+  console.error("Age restriction for voting eligibity");
+}
+
+// Method 3: with arrow function
+
+const votingEligibility = (age: number) => {
+  if (age >= 21) {
+    return console.log(`Age is ${age}, which is eligible to vote`);
+  } else {
+    return console.log(`Age is ${age}, which is not eligible to vote`);
+  }
+};
+
+votingEligibility(20);
+votingEligibility(23);
+votingEligibility(18);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 6: Write a program that calculates the result of a mathematical expression.	(((10 + 5) * 3 - 2) / (4 % 3)  - 7)
+*/
+
+function calculateExpression(): number {
+  const result = ((10 + 5) * 3 - 2) / (4 % 3) - 7;
+  return result;
+}
+
+// Calculate and print the result
+const expressionResult: number = calculateExpression();
+console.log(`Result of the expression is: ${expressionResult}`);
+
+// Method 2: with arrow function
+
+const resultCalculateExpression = ((10 + 5) * 3 - 2) / (4 % 3) - 7;
+
+console.log(`The result of expression is ${resultCalculateExpression}`);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 7: Write a program that determines if an alphabet is vowel or consonant.
+*/
+
+function checkVowelOrConsonant(alphabet: string): string {
+  const lowercaseAlphabet = alphabet.toLowerCase();
+
+  if (lowercaseAlphabet.length === 1 && /^[a-z]$/.test(lowercaseAlphabet)) {
+    // Check if the input is a single alphabet character
+    if (
+      lowercaseAlphabet === "a" ||
+      lowercaseAlphabet === "e" ||
+      lowercaseAlphabet === "i" ||
+      lowercaseAlphabet === "o" ||
+      lowercaseAlphabet === "u"
+    ) {
+      return "Vowel";
+    } else {
+      return "Consonant";
+    }
+  } else {
+    return "Invalid input";
+  }
+}
+
+const inputAlphabet: string = "A";
+const result: string = checkVowelOrConsonant(inputAlphabet);
+console.log(`${inputAlphabet} is a ${result}.`);
+
+// ########################################### Method 2 ###########################################
+
+let alphabet: string = "a";
+if (
+  alphabet == "a" ||
+  alphabet == "e" ||
+  alphabet == "i" ||
+  alphabet == "o" ||
+  alphabet == "u"
+) {
+  console.log("Vowel");
+} else {
+  console.log("consonants");
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+// ########################################### Nested ###########################################
+
+// Ticketing system
+let country = "Pakistan";
+
+let age = 10;
+
+if (country === "Pakistan") {
+  if (age >= 18) {
+    console.log("Here is your ticket");
+  } else {
+    console.error("Age restriction");
+  }
+} else {
+  console.log("Invalid country");
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+
+
+
