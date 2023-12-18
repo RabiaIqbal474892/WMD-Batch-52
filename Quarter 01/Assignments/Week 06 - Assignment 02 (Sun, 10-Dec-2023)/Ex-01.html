@@ -1,0 +1,120 @@
+<!--
+Exercise 01:
+Write a program to convert the temperature from Celsius to Fahrenheit and vice verse.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        background-color: rgb(20, 18, 18);
+      }
+      h1 {
+        color: green;
+        font-size: 32px;
+      }
+      h2 {
+        color: green;
+        font-size: 28px;
+      }
+      h4 {
+        color: white;
+        font-size: 22px;
+      }
+      label {
+        display: inline-block;
+        margin-top: 10px;
+        color: blue;
+        margin-right: 10px;
+      }
+      input {
+        margin-top: 10px;
+      }
+      button {
+        display: block; /* Make the button a block element to move it to a new line */
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      label[for="Celsius"] h3,
+      label[for="Fahrenheit"] h3 {
+        color: brown;
+      }
+      #output-celsius {
+        color: yellow; /* Change the color to your preference */
+        margin-top: 10px;
+      }
+      #output-fahrenheit {
+        color: cyan; /* Change the color to your preference */
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Submitted by: Rabia Iqbal</h1>
+    <h1>Temperature Converter</h1>
+    <h4>Week 6, Date: 10-Dec-2023</h4>
+    <hr color="white" />
+    <hr color="white" />
+    <p style="color: brown">
+        <b>
+        Q1. Write a program to convert the temperature from Celsius to
+        Fahrenheit and vice verse.
+        </b>
+    </p>
+    <hr color="green" />
+    <h2>Solution:</h2>
+    <hr color="white" />
+    <hr color="white" />
+
+
+    <!-- Celsius to Fahrenheit = -->
+    <label for="Celsius"><h3>Celsius to Fahrenheit</h3></label>
+    <hr color="green" />
+
+    <label for="celsiusInput"><h3>Enter Temperature in Celsius:</h3></label>
+    <input type="number" id="celsiusInput" value="" size="4">
+    <button onclick="centigradeToFahrenheit()">Convert to Fahrenheit</button>
+
+    <div id="output-fahrenheit"></div>
+
+    <hr color="white" />
+    <hr color="white" />
+
+    <!-- Fahrenheit to Celsius = -->
+    <label for="Fahrenheit"><h3>Fahrenheit to Celsius</h3></label>
+    <hr color="green" />
+
+    <label for="fahrenheitInput"><h3>Enter Temperature in Fahrenheit:</h3></label>
+    <input type="number" id="fahrenheitInput" value="" size="4" />
+    <button onclick="FahrenheitToCelsius()">Convert to Celsius</button>
+
+    <div id="output-celsius"></div>
+    <!--
+    Fahrenheit = <label for="c-to-f" id="c-to-f"></label>
+    Celsius = <label for="f-to-c" id="f-to-c"></label>
+    -->
+
+    <hr color="white" />
+    <hr color="white" />
+    <hr color="white" />
+
+    <script>
+      // Here the value is stored in new variable centigradeToFahrenheit
+      function centigradeToFahrenheit() {
+        let x = document.getElementById("celsiusInput").value;
+        let cToFahr = (x * 9) / 5 + 32;
+        document.getElementById("output-fahrenheit").innerHTML = `Fahrenheit: ${cToFahr}`;
+      }
+
+      function FahrenheitToCelsius() {
+        let y = document.getElementById("fahrenheitInput").value;
+        let fToC = (y - 32) * (5 / 9);
+        document.getElementById("output-celsius").innerHTML = `Celsius: ${fToC}`;
+      }
+    </script>
+  </body>
+</html>

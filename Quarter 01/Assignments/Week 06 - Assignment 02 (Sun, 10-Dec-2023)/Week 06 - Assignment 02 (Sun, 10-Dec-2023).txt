@@ -1,0 +1,659 @@
+
+				Weekly Assignment 02 (Sun, 10-Dec-2023)
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 01:
+Write a program to convert the temperature from Celsius to Fahrenheit and vice verse.
+*/
+
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+In HTML and JavaScript
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Temperature Converter</title>
+    <style>
+      body {
+        background-color: rgb(20, 18, 18);
+      }
+      h1 {
+        color: green;
+        font-size: 32px;
+      }
+      h2 {
+        color: green;
+        font-size: 28px;
+      }
+      h4 {
+        color: white;
+        font-size: 22px;
+      }
+      label {
+        display: inline-block;
+        margin-top: 10px;
+        color: blue;
+        margin-right: 10px;
+      }
+      input {
+        margin-top: 10px;
+      }
+      button {
+        display: block; /* Make the button a block element to move it to a new line */
+        margin-top: 10px;
+        margin-bottom: 20px;
+      }
+      label[for="Celsius"] h3,
+      label[for="Fahrenheit"] h3 {
+        color: brown;
+      }
+      #output-celsius {
+        color: yellow; /* Change the color to your preference */
+        margin-top: 10px;
+      }
+      #output-fahrenheit {
+        color: cyan; /* Change the color to your preference */
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Submitted by: Rabia Iqbal</h1>
+    <h1>Temperature Converter</h1>
+    <h4>Week 6, Date: 10-Dec-2023</h4>
+    <hr color="white" />
+    <hr color="white" />
+    <p style="color: brown">
+        <b>
+        Q1. Write a program to convert the temperature from Celsius to
+        Fahrenheit and vice verse.
+        </b>
+    </p>
+    <hr color="green" />
+    <h2>Solution:</h2>
+    <hr color="white" />
+    <hr color="white" />
+
+
+    <!-- Celsius to Fahrenheit = -->
+    <label for="Celsius"><h3>Celsius to Fahrenheit</h3></label>
+    <hr color="green" />
+
+    <label for="celsiusInput"><h3>Enter Temperature in Celsius:</h3></label>
+    <input type="number" id="celsiusInput" value="" size="4">
+    <button onclick="centigradeToFahrenheit()">Convert to Fahrenheit</button>
+
+    <div id="output-fahrenheit"></div>
+
+    <hr color="white" />
+    <hr color="white" />
+
+    <!-- Fahrenheit to Celsius = -->
+    <label for="Fahrenheit"><h3>Fahrenheit to Celsius</h3></label>
+    <hr color="green" />
+
+    <label for="fahrenheitInput"><h3>Enter Temperature in Fahrenheit:</h3></label>
+    <input type="number" id="fahrenheitInput" value="" size="4" />
+    <button onclick="FahrenheitToCelsius()">Convert to Celsius</button>
+
+    <div id="output-celsius"></div>
+    <!--
+    Fahrenheit = <label for="c-to-f" id="c-to-f"></label>
+    Celsius = <label for="f-to-c" id="f-to-c"></label>
+    -->
+
+    <hr color="white" />
+    <hr color="white" />
+    <hr color="white" />
+
+    <script>
+      // Here the value is stored in new variable centigradeToFahrenheit
+      function centigradeToFahrenheit() {
+        let x = document.getElementById("celsiusInput").value;
+        let cToFahr = (x * 9) / 5 + 32;
+        document.getElementById("output-fahrenheit").innerHTML = `Fahrenheit: ${cToFahr}`;
+      }
+
+      function FahrenheitToCelsius() {
+        let y = document.getElementById("fahrenheitInput").value;
+        let fToC = (y - 32) * (5 / 9);
+        document.getElementById("output-celsius").innerHTML = `Celsius: ${fToC}`;
+      }
+    </script>
+  </body>
+</html>
+
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+In TypeScript
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+
+import promptSync from "prompt-sync";
+
+const prompt = promptSync();
+
+function convertToCelsius(fahrenheit: number): number {
+  return (fahrenheit - 32) * (5 / 9);
+}
+
+function convertToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
+}
+
+function temperatureConverter() {
+  const userInput = prompt("Enter temperature: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid temperature.");
+    return;
+  }
+
+  const temperature = parseFloat(userInput);
+
+  if (isNaN(temperature)) {
+    console.log("Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  const celsius = convertToCelsius(temperature);
+  const fahrenheit = convertToFahrenheit(temperature);
+
+  console.log(`Temperature in Celsius: ${celsius.toFixed(2)}°C`);
+  console.log(`Temperature in Fahrenheit: ${fahrenheit.toFixed(2)}°F`);
+}
+
+// Run the temperature converter program
+temperatureConverter();
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 02:
+Write a program that calculates the percentage.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function calculatePercentage() {
+  // Get input from the user for total marks and obtained marks
+
+  const obtainedMarksStr = prompt("Enter obtained marks: ");
+  const totalMarksStr = prompt("Enter total marks: ");
+
+  // Parse input strings to numbers
+  const totalMarks = parseFloat(totalMarksStr);
+  const obtainedMarks = parseFloat(obtainedMarksStr);
+
+  // Check if the input is valid
+  if (isNaN(totalMarks) || isNaN(obtainedMarks)) {
+    console.log("Invalid input. Please enter valid numbers.");
+    return;
+  }
+
+  // Calculate the percentage
+  const percentage = (obtainedMarks / totalMarks) * 100;
+
+  // Display the result
+  console.log(`Percentage: ${percentage.toFixed(2)}%`);
+}
+
+// Run the program
+calculatePercentage();
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 03:
+Write a program that converts given number of days in to weeks and days such as 17 days = 2 weeks and 3 days.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function convertDaysToWeeksAndDays() {
+  // Take input from the user for converting given number of days in to weeks and days
+  const noOfDaysStr = prompt("Enter the number of days: ");
+
+  // Parse the input string into number
+  const noOfDays = parseInt(noOfDaysStr);
+
+  // Check if the input is valid
+  if (isNaN(noOfDays) || noOfDays < 0) {
+    console.log(
+      "Invalid input. Please enter a valid non-negative number of days."
+    );
+    return;
+  }
+
+  // Calculate weeks and remaining days
+  const weeks = Math.floor(noOfDays / 7);
+  const remainingDays = noOfDays % 7;
+
+  // Display the result
+  console.log(`${noOfDays} days = ${weeks} weeks and ${remainingDays} days`);
+}
+
+// Run the program
+convertDaysToWeeksAndDays();
+
+export {};
+
+------------------------------------------------------------
+------------------------------------------------------------
+------------------------------------------------------------
+
+Math.floor(noOfDays / 7): This line calculates the number of weeks by dividing the total number of days (noOfDays) by 7. The result is then rounded down to the nearest whole number using Math.floor(). This is because a week has 7 days, so you're determining how many complete weeks are present in the given number of days.
+
+For example, if noOfDays is 17, Math.floor(17 / 7) would be 2 because there are two complete weeks in 17 days.
+
+remainingDays = noOfDays % 7: This line calculates the remaining days after removing the complete weeks. The % (modulo) operator gives you the remainder when noOfDays is divided by 7. This represents the days that are left over after accounting for the complete weeks.
+
+Continuing with the example, for noOfDays = 17, remainingDays would be 17 % 7, which is 3. This means there are 3 days left after considering the two complete weeks.
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 04:
+Write a program that calculates the discount for a product based on its price. If the price is above $100, apply a 10% discount; otherwise, apply a 5% discount.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+// If the price is above $100, apply a 10% discount; otherwise, apply a 5% discount.
+function calculateDiscount(price: number): number {
+  const discountPercentage = price > 100 ? 0.1 : 0.05;
+  const discount = price * discountPercentage;
+  return discount;
+}
+
+function applyDiscount(): void {
+  const userInput = prompt("Enter the product price: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid price.");
+    return;
+  }
+
+  const price = parseFloat(userInput);
+
+  if (isNaN(price) || price < 0) {
+    console.log("Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  const discount = calculateDiscount(price);
+  const discountedPrice = price - discount;
+
+  console.log(`Original Price: $${price.toFixed(2)}`);
+  console.log(`Discount Percentage: ${calculateDiscount(price) * 100}%`);
+  console.log(`Discount Percentage: ${discount * 100}%`);
+  console.log(`Discount Amount: $${discount.toFixed(2)}`);
+  console.log(`Discounted Price: $${discountedPrice.toFixed(2)}`);
+}
+
+// Run the program
+applyDiscount();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 05:
+Create a program that determines the category of a user-provided age. If the age is between 0 and 12, print "Child." If it's between 13 and 19, print "Teenager." Otherwise, print "Adult."
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function determineCategory(age: number): string {
+  if (age >= 0 && age <= 12) {
+    return "Child";
+  } else if (age >= 13 && age <= 19) {
+    return "Teenager";
+  } else {
+    return "Adult";
+  }
+}
+
+function categorizeUser(): void {
+  const userInput = prompt("Enter your age: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid age.");
+    return;
+  }
+
+  const age = parseInt(userInput);
+
+  if (isNaN(age) || age < 0) {
+    console.log("Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  const category = determineCategory(age);
+  console.log(`Based on your age, you are a: ${category}.`);
+}
+
+// Run the program
+categorizeUser();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 06:
+Write a program that takes temperature and check it. If it is cold then suggest the user to wear warm clothes and so on according to the weather.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function suggestClothing(temperature: number): string {
+  if (temperature < 0) {
+    return "It's very cold. Wear heavy winter clothes, gloves, and a hat.";
+  } else if (temperature >= 0 && temperature < 10) {
+    return "It's cold. Wear a winter coat, scarf, and gloves.";
+  } else if (temperature >= 10 && temperature < 20) {
+    return "It's cool. A light jacket or sweater should be fine.";
+  } else if (temperature >= 20 && temperature < 30) {
+    return "It's mild. Wear a t-shirt or a light layer.";
+  } else {
+    return "It's warm. You can wear shorts and a t-shirt.";
+  }
+}
+
+function provideClothingAdvice(): void {
+  const userInput = prompt("Enter the temperature in Celsius: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid temperature.");
+    return;
+  }
+
+  const temperature = parseFloat(userInput);
+
+  if (isNaN(temperature)) {
+    console.log("Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  const advice = suggestClothing(temperature);
+  console.log(
+    `Based on the ${temperature} temperature, it is suggested: ${advice}`
+  );
+}
+
+// Run the program
+provideClothingAdvice();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 07:
+Write a program that checks if the given number is divisible by 3 or 5 or both or not divisible by anyone show output accordingly.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function checkDivisibility(num: number): string {
+  if (num % 3 === 0 && num % 5 === 0) {
+    return `${num} is divisible by both 3 and 5.`;
+  } else if (num % 3 === 0) {
+    return `${num} is divisible by 3.`;
+  } else if (num % 5 === 0) {
+    return `${num} is divisible by 5.`;
+  } else {
+    return `${num} is not divisible by 3 or 5.`;
+  }
+}
+
+function provideDivisibilityCheck(): void {
+  const userInput = prompt("Enter a number: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid number.");
+    return;
+  }
+
+  const number = parseFloat(userInput);
+
+  if (isNaN(number)) {
+    console.log("Invalid input. Please enter a valid number.");
+    return;
+  }
+
+  const result = checkDivisibility(number);
+  console.log(result);
+}
+
+// Run the program
+provideDivisibilityCheck();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 08:
+Write a program that checks if the given year is leap year or not.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function isLeapYear(year: number): boolean {
+  // Leap year conditions: divisible by 4 and not divisible by 100 unless also divisible by 400
+  return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
+}
+
+function checkLeapYear(): void {
+  const userInput = prompt("Enter a year: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid year.");
+    return;
+  }
+
+  const inputYear = parseInt(userInput);
+
+  if (isNaN(inputYear) || inputYear <= 0) {
+    console.log("Invalid input. Please enter a valid positive year.");
+    return;
+  }
+
+  const leapYearMessage = isLeapYear(inputYear)
+    ? `${inputYear} is a leap year.`
+    : `${inputYear} is not a leap year.`;
+
+  console.log(leapYearMessage);
+}
+
+// Run the program
+checkLeapYear();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 09:
+Develop a program that determines the day of the week. Ask the user for a number (1-7) and use nested if statements to print the corresponding day's name.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function getDayOfWeek(dayNumber: number): string {
+  switch (dayNumber) {
+    case 1:
+      return "Monday";
+    case 2:
+      return "Tuesday";
+    case 3:
+      return "Wednesday";
+    case 4:
+      return "Thursday";
+    case 5:
+      return "Friday";
+    case 6:
+      return "Saturday";
+    case 7:
+      return "Sunday";
+    default:
+      return "Invalid day number. Please enter a number between 1 and 7.";
+  }
+}
+
+function determineDayOfWeek(): void {
+  const userInput = prompt("Enter a number (1-7) to get the day of the week: ");
+
+  if (userInput === null || userInput.trim() === "") {
+    console.log("Please enter a valid number.");
+    return;
+  }
+
+  const dayNumber = parseInt(userInput);
+
+  if (isNaN(dayNumber) || dayNumber < 1 || dayNumber > 7) {
+    console.log("Invalid input. Please enter a number between 1 and 7.");
+    return;
+  }
+
+  const dayOfWeek = getDayOfWeek(dayNumber);
+  console.log(`Day of the week: ${dayOfWeek}`);
+}
+
+// Run the program
+determineDayOfWeek();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 10:
+Write a program that takes the number of units consumed by a user if it is greater than 100 then add 10% tax if greater than 200 then add 15% of tax so on up to if greater than 500 then add 25% of tax.
+Where the tax amount will be calculated by the amount of bill.
+*/
+
+import PromptSync from "prompt-sync";
+
+const prompt = PromptSync();
+
+function calculateTax(units: number): number {
+  let taxRate = 0;
+
+  if (units > 500) {
+    taxRate = 0.25;
+  } else if (units > 200) {
+    taxRate = 0.15;
+  } else if (units > 100) {
+    taxRate = 0.1;
+  }
+
+  return units * taxRate;
+}
+
+function calculateBill(units: number): number {
+  const baseRate = 2; // Assuming a base rate per unit
+
+  const tax = calculateTax(units);
+  const totalBill = units * baseRate + tax;
+
+  return totalBill;
+}
+
+function main() {
+  const unitsConsumed = parseFloat(
+    prompt("Enter the number of units consumed: ")
+  );
+
+  if (isNaN(unitsConsumed) || unitsConsumed < 0) {
+    console.log("Invalid input. Please enter a valid number of units.");
+    return;
+  }
+
+  const billAmount = calculateBill(unitsConsumed);
+
+  console.log(
+    `Bill amount for ${unitsConsumed} units: $${billAmount.toFixed(2)}`
+  );
+}
+
+// Run the program
+main();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+
+
+ - Write a program to convert the temperature from Celsius to Fahrenheit and vice verse.
+
+ - Write a program that calculates the percentage.
+
+ - Write a program that converts given number of days in to weeks and days such as 17 days = 2 weeks and 3 days.
+
+ - Write a program that calculates the discount for a product based on its price. If the price is above $100, apply a 10% discount; otherwise, apply a 5% discount.
+
+ - Create a program that determines the category of a user-provided age. If the age is between 0 and 12, print "Child." If it's between 13 and 19, print "Teenager." Otherwise, print "Adult."
+
+ - Write a program that takes temperature and check it. If it is cold then suggest the user to wear warm clothes and so on according to the weather.
+
+ - Write a program that checks if the given number is  divisible by 3 or 5 or both or not divisible by anyone show output accordingly.
+
+ - Write a program that checks if the given year is leap year or not.
+
+ - Develop a program that determines the day of the week. Ask the user for a number (1-7) and use nested if statements to print the corresponding day's name.
+
+ - Write a program that takes the number of units consumed by a user if it is greater than 100 then add 10% tax if greater than 200 then add 15% of tax so on up to if greater than 500 then add 25% of tax
+Where the tax amount will be calculated by the amount of bill.
+
+For user input save a value in variable and use it or create a function for every program and pass desired value when u call that function best approach.
+
+
+
