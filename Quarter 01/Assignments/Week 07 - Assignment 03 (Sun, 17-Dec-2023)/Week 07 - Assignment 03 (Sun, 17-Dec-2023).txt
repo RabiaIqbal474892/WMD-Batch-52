@@ -1,0 +1,325 @@
+
+				Weekly Assignment 03 (Sun, 17-Dec-2023)
+				Week 07 - Assignment 03 (Sun, 17-Dec-2023)
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+/*
+Exercise 01:
+Create a function that takes an array, an index, and a value as parameters. Inside the function, use the splice method to insert the value at the specified index in the array. Return the modified array.
+*/
+
+function insertValueAtIndex<T>(arr: T[], index: number, value: T): T[] {
+  // Make a copy of the array to avoid modifying the original array
+  const newArray = [...arr];
+
+  // Use splice to insert the value at the specified index
+  newArray.splice(index, 0, value);
+
+  // Return the modified array
+  return newArray;
+}
+
+// Example usage:
+const originalArray = [1, 2, 3, 4, 5];
+const modifiedArray = insertValueAtIndex(originalArray, 2, 99);
+
+console.log("Original Array:", originalArray);
+console.log("Modified Array:", modifiedArray);
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 02:
+Implement a simple shopping cart program using an array. Create functions to add items, remove items, and update quantities using the splice method. Print the cart's contents after each operation.
+*/
+
+type CartItem = {
+  name: string;
+  price: number;
+  quantity: number;
+};
+
+class ShoppingCart {
+  private cart: CartItem[] = [];
+
+  // Function to add an item to the cart
+  addItem(name: string, price: number, quantity: number): void {
+    const newItem: CartItem = { name, price, quantity };
+    this.cart.push(newItem);
+    this.printCart();
+  }
+
+  // Function to remove an item from the cart by name
+  removeItem(name: string): void {
+    const index = this.findIndexByName(name);
+    if (index !== -1) {
+      this.cart.splice(index, 1);
+      this.printCart();
+    } else {
+      console.log(`Item '${name}' not found in the cart.`);
+    }
+  }
+
+  // Function to update the quantity of an item in the cart
+  updateQuantity(name: string, newQuantity: number): void {
+    const index = this.findIndexByName(name);
+    if (index !== -1) {
+      this.cart[index].quantity = newQuantity;
+      this.printCart();
+    } else {
+      console.log(`Item '${name}' not found in the cart.`);
+    }
+  }
+
+  // Helper function to find the index of an item by name
+  private findIndexByName(name: string): number {
+    return this.cart.findIndex((item) => item.name === name);
+  }
+
+  // Function to print the contents of the cart
+  private printCart(): void {
+    console.log("Cart Contents:");
+    this.cart.forEach((item) => {
+      console.log(
+        `${item.name} - Price: $${item.price} - Quantity: ${item.quantity}`
+      );
+    });
+    console.log("---------------");
+  }
+}
+
+// Example usage:
+const shoppingCart = new ShoppingCart();
+
+// Adding items to the cart
+shoppingCart.addItem("Product A", 10, 2);
+shoppingCart.addItem("Product B", 20, 1);
+
+// Updating quantity of an item in the cart
+shoppingCart.updateQuantity("Product A", 3);
+
+// Removing an item from the cart
+shoppingCart.removeItem("Product B");
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 03:
+Write a program that uses a for loop to print the first 25 integers.
+*/
+
+// Function to print the first 25 integers
+function printFirst25Integers(): void {
+  for (let i = 1; i <= 25; i++) {
+    console.log(i);
+  }
+}
+
+// Call the function to print the first 25 integers
+printFirst25Integers();
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 04:
+Write a program that uses a for loop to print the first 10 even numbers.
+*/
+
+// Function to print the first 10 even numbers
+function printFirst10EvenNumbers(): void {
+  for (let i = 2; i <= 20; i += 2) {
+    console.log(i);
+  }
+}
+
+// Call the function to print the first 10 even numbers
+printFirst10EvenNumbers();
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 05:
+Create a function that takes a positive integer as parameter and uses a for loop to calculate and return the factorial of that number.
+*/
+
+function calculateFactorial(n: number): number {
+  // Check if the input is a positive integer
+  if (n < 0 || !Number.isInteger(n)) {
+    throw new Error("Input must be a positive integer.");
+  }
+
+  // Initialize factorial to 1
+  let factorial = 1;
+
+  // Calculate factorial using a for loop
+  for (let i = 1; i <= n; i++) {
+    factorial *= i;
+  }
+
+  return factorial;
+}
+
+// Example usage:
+const inputNumber = 5;
+const result = calculateFactorial(inputNumber);
+console.log(`The factorial of ${inputNumber} is: ${result}`);
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 06:
+Write a program having an array of numbers if the number is negative it should remove the negative number from the array.
+*/
+
+function removeNegativeNumbers(arr: number[]): number[] {
+  // Use filter to create a new array with only non-negative numbers
+  const nonNegativeArray = arr.filter((num) => num >= 0);
+  return nonNegativeArray;
+}
+
+// Example usage:
+const numbersArray = [1, -2, 3, -4, 5, -6];
+const resultArray = removeNegativeNumbers(numbersArray);
+
+console.log("Original Array:", numbersArray);
+console.log("Array with Negative Numbers Removed:", resultArray);
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 07:
+Create a function that takes an array of numbers as parameter. Use a for loop to calculate and return the sum of all the numbers in the array.
+*/
+
+function calculateSum(numbers: number[]): number {
+  let sum = 0;
+
+  // Use a for loop to iterate through the array and calculate the sum
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+
+  return sum;
+}
+
+// Example usage:
+const numbersArray = [1, 2, 3, 4, 5];
+const sumResult = calculateSum(numbersArray);
+
+console.log("Array:", numbersArray);
+console.log("Sum of Array Elements:", sumResult);
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Exercise 08:
+Implement a program that takes a list of temperatures in Celsius as input from the user. Convert each temperature to Fahrenheit using the formula F = (C * 9/5) + 32 and store the converted temperatures in an array. Use a for loop to perform the conversion for each temperature.
+*/
+
+import promptSync from "prompt-sync";
+
+// Create prompt instance
+const prompt = promptSync();
+
+// Function to convert Celsius to Fahrenheit
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
+}
+
+// Function to take user input for temperatures
+function getUserTemperatures(): number[] {
+  const numberOfTemperatures = prompt("Enter the number of temperatures: ");
+
+  const temperatures: number[] = [];
+  for (let i = 0; i < parseInt(numberOfTemperatures); i++) {
+    const temperature = prompt(`Enter temperature ${i + 1} in Celsius: `);
+    temperatures.push(parseFloat(temperature));
+  }
+
+  return temperatures;
+}
+
+// Main program
+function main() {
+  const celsiusTemperatures = getUserTemperatures();
+
+  // Convert temperatures to Fahrenheit using a for loop
+  const fahrenheitTemperatures: number[] = [];
+  for (let i = 0; i < celsiusTemperatures.length; i++) {
+    const celsius = celsiusTemperatures[i];
+    const fahrenheit = celsiusToFahrenheit(celsius);
+    fahrenheitTemperatures.push(fahrenheit);
+  }
+
+  // Display the converted temperatures
+  console.log("\nConverted Temperatures:");
+  for (let i = 0; i < fahrenheitTemperatures.length; i++) {
+    console.log(`Temperature ${i + 1}: ${fahrenheitTemperatures[i]} °F`);
+  }
+}
+
+// Run the program
+main();
+
+export {};
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+
+01 - Create a function that takes an array, an index, and a value as parameters. Inside the function, use the splice method to insert the value at the specified index in the array. Return the modified array.
+
+02 - Implement a simple shopping cart program using an array. Create functions to add items, remove items, and update quantities using the splice method. Print the cart's contents after each operation.
+
+03 - Write a program that uses a for loop to print the first 25 integers.
+
+04 - Write a program that uses a for loop to print the first 10 even numbers.
+
+05 - Create a function that takes a positive integer as parameter and uses a for loop to calculate and return the factorial of that number.
+
+06 - Write a program having an array of numbers if the number is negative it should remove the negative number from the array.
+
+07 - Create a function that takes an array of numbers as parameter. Use a for loop to calculate and return the sum of all the numbers in the array.
+
+08 - Implement a program that takes a list of temperatures in Celsius as input from the user. Convert each temperature to Fahrenheit using the formula F = (C * 9/5) + 32 and store the converted temperatures in an array. Use a for loop to perform the conversion for each temperature.
+
+
