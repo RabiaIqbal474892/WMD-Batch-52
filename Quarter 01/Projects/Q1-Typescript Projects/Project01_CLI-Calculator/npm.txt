@@ -1,0 +1,7 @@
+npm publish
+npm login
+
+npm publish --access=public
+
+scope based package
+npm init --scope=typescriptrabiaa
