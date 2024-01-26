@@ -1,0 +1,39 @@
+//############################################################################
+
+// Help Desk Session 07 - (step04_unions_literals, step05a_objects, step05b_object_aliased, step05c_structural_typing_object_literals, step05d_nested_objects)
+
+//   (https://www.youtube.com/watch?v=93kam-INDjI&t=100s)
+
+//############################################################################
+
+// step05d_nested_objects
+
+// Objects can be nested
+
+type Author = {
+  firstName: string;
+  lastName: string;
+};
+
+type Book = {
+  author: Author;
+  name: string;
+};
+
+let book: Book = {
+  author: {
+    firstName: "Rabiaa",
+    lastName: "Iqbal",
+  },
+  name: "My Book",
+};
+
+console.log(book.author.firstName);
+
+const myBook: Book = {
+  author: {
+    firstName: "Zia",
+    lastName: "Khan",
+  },
+  name: "My Best Book",
+};
