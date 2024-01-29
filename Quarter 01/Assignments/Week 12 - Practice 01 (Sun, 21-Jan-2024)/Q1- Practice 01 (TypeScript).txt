@@ -1,0 +1,925 @@
+
+Practice
+https://github.com/JahanzaibTayyab/Batch-52/tree/main/Practice
+
+Solution
+https://github.com/JahanzaibTayyab/Batch-52/blob/main/Practice/solution.md
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 01
+
+// Basics
+
+// 1. Variable Assignment
+// Create a variable named name and assign it a string value.
+*/
+
+// Declare a variable named 'name' and assign it to a string value
+let name2: string = "Rabiaa Iqbal";
+
+console.log(name2);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 02
+
+// Basics
+
+// 2. Addition Function
+// Write a function that takes two numbers as parameters and returns their sum.
+*/
+
+function addNumbers(a: number, b: number): number {
+  return a + b;
+}
+
+const resultQ2 = addNumbers(3, 4);
+console.log(resultQ2);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 03
+
+// Basics
+
+// 3. Even or Odd Check
+// Implement a conditional statement to check if a given number is even or odd. Consider using the modulus operator % for this task.
+*/
+
+function checkEvenOrOdd(number: number): string {
+  if (number % 2 == 0) {
+    return "Even";
+  } else {
+    return "Odd";
+  }
+}
+
+const num1 = 10;
+const num2 = 3;
+
+console.log(`${num1} is ${checkEvenOrOdd(num1)}`);
+console.log(`${num2} is ${checkEvenOrOdd(num2)}`);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 04
+
+// Functions
+
+// 4. String Concatenation
+// Build a function that concatenates two strings and returns the result.
+*/
+
+function concatenateStrings(str1: string, str2: string): string {
+  return str1 + str2;
+}
+
+const string1 = "Hi";
+const string2 = "World";
+
+const resultQ4 = concatenateStrings(string1, string2);
+console.log(resultQ4);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 05
+
+// Functions
+
+// 5. Rectangle Area Calculation
+// Create a function that calculates the area of a rectangle using width and height parameters. Remember the formula: area = width * height.
+*/
+
+function calculateRectangleArea(width: number, height: number): number {
+  return width * height;
+}
+
+const rectangleWidth = 5;
+const rectangleHeight = 6;
+
+const area = calculateRectangleArea(rectangleWidth, rectangleHeight);
+console.log(`The area of the rectangle is ${area} square units.`);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 06
+
+// Functions
+
+// 6. Palindrome Check
+// Write a function to check if a given string is a palindrome. Consider reversing the string and comparing it with the original.
+*/
+
+// Function to check if a string is a palindrome
+function isPalindrome(inputString: string): boolean {
+  // Remove non-alphanumeric characters and convert to lowercase
+  const cleanedString = inputString.replace(/[^a-zA-Z0-9]/g, "").toLowerCase();
+
+  // Reverse the string
+  const reversedString = cleanedString.split("").reverse().join("");
+
+  // Compare the original and reversed strings
+  return cleanedString === reversedString;
+}
+
+// Example usage
+const palindromeString = "A man, a plan, a canal, Panama";
+const nonPalindromeString = "Hello, World!";
+
+console.log(
+  `Is "${palindromeString}" a palindrome? ${isPalindrome(palindromeString)}`
+); // Output: true
+console.log(
+  `Is "${nonPalindromeString}" a palindrome? ${isPalindrome(
+    nonPalindromeString
+  )}`
+); // Output: false
+
+// split(""):
+// The split method is used to split a string into an array of substrings based on a specified separator.
+// In this case, an empty string ("") is used as the separator. This effectively splits the string into an array of its individual characters.
+
+// reverse():
+// The reverse method is applied to the resulting array from the split operation.
+// It reverses the order of elements in the array. So, if the array represents the characters of a string, calling reverse will reverse the order of those characters.
+
+// join(""):
+// The join method is applied to the reversed array.
+// It joins the elements of an array into a single string. The parameter passed to join (in this case, an empty string "") specifies the separator between the joined elements. Using an empty string means that the characters will be concatenated without any separator.
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 07
+
+// Objects
+
+// 7. Book Object
+// Define an object representing a book with properties like title and author.
+*/
+
+// Define a Book object
+interface Book1 {
+  title: string;
+  author: string;
+}
+
+const myBook1: Book1 = {
+  title: "My first book",
+  author: "Rabiaa Iqbal",
+};
+
+// Accessing properties
+console.log(`Title: ${myBook1.title}`);
+console.log(`Author: ${myBook1.author}`);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 08
+
+// Objects
+
+// 8. Display Book Details Method
+// Add a method to the book object to display its details. You can use string formatting to present the information neatly.
+*/
+
+// Define a Book object
+interface Book2 {
+  title: string;
+  author: string;
+  displayDetails: () => void; // Method to display book details
+}
+
+const myBook2: Book2 = {
+  title: "My first book",
+  author: "Rabiaa Iqbal",
+  // Method to display book details
+  displayDetails: function () {
+    console.log(`Title: ${this.title}`);
+    console.log(`Author: ${this.author}`);
+  },
+};
+
+// Display book details using the method
+myBook2.displayDetails();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 09
+
+// Objects
+
+// 9. Person Object
+// Create an object representing a person with properties for name, age, and address.
+*/
+
+// Define a Person object
+interface Person {
+  name: string;
+  age: number;
+  address: string;
+}
+
+const person1: Person = {
+  name: "Rabiaa Iqbal",
+  age: 30,
+  address: "abc123, Lahore, Pakistan",
+};
+
+// Accessing properties
+console.log(`Name: ${person1.name}`);
+console.log(`Age: ${person1.age}`);
+console.log(`Address: ${person1.address}`);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 10
+
+// Arrays
+
+// 10. Fruits Array and Loop
+// Declare an array of fruits and print each one using a loop. You can use a for loop to iterate through the array.
+*/
+
+const fruits: string[] = ["Apple", "Mango", "Banana", "Orange", "Grapes"];
+
+console.log("List of fruits");
+for (let i = 0; i < fruits.length; i++) {
+  console.log(fruits[i]);
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 11
+
+// Arrays
+
+// 11. Average of Numbers in Array
+// Write a function to find the average value of numbers in an array. Sum the elements and divide by the length of the array.
+*/
+
+function calculateAverage(numbers: number[]): number {
+  if (numbers.length === 0) {
+    console.warn("Warning: Empty array provided. Returning 0 as the average.");
+    return 0;
+  }
+
+  // The callback function (acc, num) => acc + num is used to add each element (num) to the accumulator (acc).
+  // The initial value of the accumulator is set to 0 (0).
+
+  // Calculate the sum of numbers
+  const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+  // Calculate the average
+  const average = sum / numbers.length;
+
+  return average;
+}
+
+const numberArray = [5, 10, 15, 20, 25];
+const result = calculateAverage(numberArray);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 12
+
+// Arrays
+
+// 12. Concatenate Arrays
+// Concatenate two arrays without modifying the original arrays. You can use the + operator for concatenation.
+*/
+
+function concatenateArrays<T>(arr1: T[], arr2: T[]): T[] {
+  return [...arr1, ...arr2];
+}
+
+const array1: number[] = [1, 2, 3];
+const array2: number[] = [4, 5, 6];
+
+const concatenatedArray = concatenateArrays(array1, array2);
+
+console.log("Original Array 1", array1);
+console.log("Original Array 2", array2);
+console.log("Concatednated Array: ", concatenatedArray);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 13
+
+// Array Methods
+
+// 13. Filter Even Numbers
+// Use the filter method to get an array of even numbers from a given array. Utilize a lambda function as the filtering condition.
+*/
+
+function getEvenNumbers(numbers: number[]): number[] {
+  return numbers.filter((num) => num % 2 === 0);
+}
+
+const originalArray: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+const evenNumbersArray = getEvenNumbers(originalArray);
+
+console.log("Original Array: ", originalArray);
+console.log("Even Numbers Array: ", evenNumbersArray);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 14
+
+// Array Methods
+
+// 14. Transform Words to Lengths
+// Transform an array of words into a new array with the lengths of each word. The map function might be useful here.
+*/
+
+function getWordLengths(words: string[]): number[] {
+  return words.map((word) => word.length);
+}
+
+const wordsArray: string[] = ["apple", "mango", "banana", "orange", "grape"];
+
+const wordLengthsArray = getWordLengths(wordsArray);
+
+console.log("Original Array: ", wordsArray);
+console.log("Word Lengths Array: ", wordLengthsArray);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 15
+
+// Array Methods
+
+// 15. Positive Elements Check
+// Write a function that checks if all elements in an array are positive using the every method.
+*/
+
+function areAllPositive(numbers: number[]): boolean {
+  return numbers.every((num) => num > 0);
+}
+
+const positiveNumbersArray: number[] = [3, 8, 12, 5];
+const mixedNumbersArray: number[] = [2, -4, 6, 1];
+
+console.log(
+  "All elements positive in the first array",
+  areAllPositive(positiveNumbersArray)
+); // Output: true
+console.log(
+  "All elements positive in the second array",
+  areAllPositive(mixedNumbersArray)
+); // Output: false
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 16
+
+// Loops
+
+// 16. For Loop
+// Create a for loop to print numbers from 1 to 5. Use the range function to generate the numbers.
+*/
+
+// Range function to generate an array of numbers within a specified range
+function range(start: number, end: number): number[] {
+  const result: number[] = [];
+  for (let i = start; i <= end; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+// Print numbers from 1 to 5
+const numbers = range(1, 5);
+
+// Print the numbers using a for loop
+console.log("Numbers from 1 to 5:");
+for (const number of numbers) {
+  console.log(number);
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 17
+
+// Loops
+
+// 17. While Loop Countdown
+// Write a while loop that counts down from 10 to 1. Initialize a counter and decrement it in each iteration.
+*/
+
+// Initialize a counter
+let counter: number = 10;
+
+// While loop to count down from 10 to 1
+while (counter >= 1) {
+  console.log(counter);
+  counter--;
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 18
+
+// Loops
+
+// 18. Find Index in Array
+// Use a loop to find the index of a specific element in an array. Iterate through the array and check for equality.
+*/
+
+// Function to find the index of a specific element in an array
+function findIndex(arr: number[], target: number): number {
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === target) {
+      return i; // Return the index when the element is found
+    }
+  }
+  return -1; // Return -1 if the element is not found in the array
+}
+
+const numbersArray: number[] = [5, 10, 15, 20, 25];
+const targetNumber: number = 15;
+
+const index = findIndex(numbersArray, targetNumber);
+
+// Print the result
+if (index !== -1) {
+  console.log(`The index of ${targetNumber} is: ${index}`);
+} else {
+  console.log(`${targetNumber} not found in the array.`);
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 19
+
+// Callback Functions
+
+// 19. setTimeout Callback
+// Implement a callback function within a setTimeout to log a message after a delay. Be aware of the asynchronous nature of setTimeout.
+*/
+
+// Callback function to be executed after a delay
+function delayedCallback() {
+  console.log("Message logged after a delay!");
+}
+
+// Using setTimeout to introduce a delay (in milliseconds)
+const delayInMilliseconds: number = 2000; // 2 seconds
+
+setTimeout(delayedCallback, delayInMilliseconds);
+
+console.log(
+  "This message is logged immediately because setTimeout is asynchronous."
+);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 20
+
+// Callback Functions
+
+// 20. Callback Invocation
+// Create a function that takes a callback and invokes it with a provided value. This demonstrates the concept of higher-order functions.
+*/
+
+// Function that takes a callback and invokes it with a provided value
+function invokeCallback(
+  callback: (value: number) => void,
+  value: number
+): void {
+  callback(value);
+}
+
+function callbackFunction(value: number): void {
+  console.log(`Callback invoked with value: ${value}`);
+}
+
+// Invoke the callback function with a provided value
+invokeCallback(callbackFunction, 42);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 21
+
+// Promises
+
+// 21. Delayed Promise
+// Build a promise that resolves with a message after a delay. Use the async and await keywords for asynchronous operations.
+*/
+
+// Function that returns a promise with a delayed resolution
+function delayedPromise(delay: number): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Promise resolved after delay");
+    }, delay);
+  });
+}
+
+// Example usage with async/await
+async function asyncOperation21() {
+  console.log("Start of async operation");
+
+  // Wait for the promise to resolve using await
+  const result = await delayedPromise(2000); // 2 seconds delay
+
+  // Once the promise is resolved, log the result
+  console.log(result);
+
+  console.log("End of async operation");
+}
+
+// Call the async operation
+asyncOperation21();
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 22
+
+// Promises
+
+// 22. Chained Promises
+// Chain two promises to perform sequential asynchronous operations. Ensure that the second operation depends on the result of the first one.
+*/
+
+// First asynchronous operation returning a promise
+function firstAsyncOperation(): Promise<number> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const result = 42; // Some result from the first operation
+      resolve(result);
+    }, 2000); // Simulating a 2 seconds delay
+  });
+}
+
+// Second asynchronous operation depending on the result of the first one
+function secondAsyncOperation(
+  resultFromFirstOperation: number
+): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const result = `Second operation using ${resultFromFirstOperation}`;
+      resolve(result);
+    }, 1000); // Simulating a 1-second delay
+  });
+}
+
+// Chaining the promises for sequential operations
+firstAsyncOperation()
+  .then((result) => {
+    // Result from the first operation
+    console.log(`First operation result: ${result}`);
+
+    // Returning the result to chain with the second operation
+    return result;
+  })
+  .then((resultFromFirstOperation) => {
+    // Perform the second operation using the result from the first one
+    return secondAsyncOperation(resultFromFirstOperation);
+  })
+  .then((finalResult) => {
+    // Final result after both operations
+    console.log(`Final result: ${finalResult}`);
+  })
+  .catch((error) => {
+    // Handle errors from any of the promises
+    console.error(`Error occurred: ${error}`);
+  });
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 23
+
+// Promises
+
+// 23. Concurrent Promises
+// Use Promise.all to handle multiple promises concurrently. This can improve the efficiency of asynchronous operations.
+*/
+
+// Asynchronous function simulating an operation that returns a promise
+function asyncOperation23(value: number, delay: number): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      const result = `Async operation with value ${value}`;
+      resolve(result);
+    }, delay);
+  });
+}
+
+// Array of values for concurrent asynchronous operations
+const values: number[] = [1, 2, 3];
+
+// Create an array of promises using the asyncOperation function
+const promises: Promise<string>[] = values.map((value) =>
+  asyncOperation23(value, 1000)
+);
+
+// Use Promise.all to handle the promises concurrently
+Promise.all(promises)
+  .then((results) => {
+    // All promises have been fulfilled, and results is an array of the resolved values
+    console.log("Concurrent results:", results);
+  })
+  .catch((error) => {
+    // Handle errors from any of the promises
+    console.error(`Error occurred: ${error}`);
+  });
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 24
+
+// Advanced Topics
+
+// 24. Default Parameter
+// Implement a function with a default parameter. This provides a default value if the parameter is not explicitly provided.
+*/
+
+// Function with a default parameter
+function greet(name: string = "Guest"): string {
+  return `Hi, ${name}!`;
+}
+
+// Example usage without providing the parameter
+const greetingWithoutName = greet();
+console.log(greetingWithoutName); // Output: Hi, Guest!
+
+// Example usage providing a parameter
+const greetingWithName = greet("Rabiaa");
+console.log(greetingWithName); // Output: Hi, Rabiaa!
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 25
+
+// Advanced Topics
+
+// 25. Sort Objects by Property
+// Create an array of objects and sort them based on a specific property. Utilize the sorted function and a lambda function as the key.
+*/
+
+// Array of objects with a 'name' property
+const arrayOfObjects: { name: string; age: number }[] = [
+  { name: "Ahmad", age: 30 },
+  { name: "Umar", age: 25 },
+  { name: "Usman", age: 35 },
+];
+
+// Sort the array of objects based on the 'name' property using the sort function
+const sortedArray = arrayOfObjects.sort((a, b) => a.name.localeCompare(b.name));
+
+// Print the sorted array
+console.log("Sorted Array by Name:");
+console.log(sortedArray);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 26
+
+// Advanced Topics
+
+// 26. Rest Parameters
+// Write a function that uses rest parameters to calculate the sum of an arbitrary number of arguments. This allows flexibility in the number of arguments.
+*/
+
+// Function using rest parameters to calculate the sum
+function calculateSum(...numbers: number[]): number {
+  return numbers.reduce((sum, current) => sum + current, 0);
+}
+
+const sum1 = calculateSum(1, 2, 3, 4, 5);
+console.log("Sum 1:", sum1); // Output: 15
+
+const sum2 = calculateSum(10, 20, 30);
+console.log("Sum 2:", sum2); // Output: 60
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 27
+
+// Logic Building
+
+// 27. Nested Loops
+// Solve a problem that requires nested loops. Nested loops are useful for handling two-dimensional data structures.
+*/
+
+// Function to print a square pattern of stars
+function printSquarePattern(size: number): void {
+  for (let i = 0; i < size; i++) {
+    let row = "";
+    for (let j = 0; j < size; j++) {
+      row += "* ";
+    }
+    console.log(row);
+  }
+}
+
+const patternSize = 5;
+printSquarePattern(patternSize);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 28
+
+// Logic Building
+
+// 28. Second-Largest Number
+// Write a function to find the second-largest number in an array. Sort the array in descending order and retrieve the second element.
+*/
+
+// Function to find the second-largest number in an array
+function findSecondLargest(numbers: number[]): number | undefined {
+  // Check if the array has at least two elements
+  if (numbers.length < 2) {
+    return undefined; // Not enough elements to find the second-largest
+  }
+
+  // Sort the array in descending order
+  const sortedArray = numbers.sort((a, b) => b - a);
+
+  // Retrieve the second element
+  const secondLargest = sortedArray[1];
+
+  return secondLargest;
+}
+
+const numbersArray2: number[] = [5, 10, 3, 8, 15];
+const secondLargestNumber = findSecondLargest(numbersArray2);
+
+if (secondLargestNumber !== undefined) {
+  console.log("Second-Largest Number:", secondLargestNumber);
+} else {
+  console.log("Not enough elements to find the second-largest number.");
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 29
+
+// Logic Building
+
+// 29. Leap Year Check
+// Implement a program that checks if a given year is a leap year. Leap years have specific conditions, such as being divisible by 4 but not by 100 unless also divisible by 400.
+*/
+
+// Function to check if a year is a leap year
+function isLeapYear(year: number): boolean {
+  // Leap year conditions:
+  // 1. Divisible by 4
+  // 2. Not divisible by 100 unless also divisible by 400
+
+  if ((year % 4 === 0 && year % 100 !== 0) || year % 400 === 0) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+const yearToCheck = 2024;
+
+if (isLeapYear(yearToCheck)) {
+  console.log(`${yearToCheck} is a leap year.`);
+} else {
+  console.log(`${yearToCheck} is not a leap year.`);
+}
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+
+/*
+Q # 30
+
+// Logic Building
+
+// 30. Basic Quiz Simulation
+
+// Create a simple program that simulates a basic quiz using arrays and loops. Utilize arrays to store questions and answers, and loops for user interaction.
+*/
+
+// Function to run the quiz
+function runQuiz(questions: string[], correctAnswers: string[]): void {
+  let score: number = 0;
+
+  for (let i = 0; i < questions.length; i++) {
+    const userAnswer: string | null = prompt(
+      `Question ${i + 1}: ${questions[i]}`
+    );
+
+    if (
+      userAnswer !== null &&
+      userAnswer.toLowerCase() === correctAnswers[i].toLowerCase()
+    ) {
+      console.log("Correct!");
+      score++;
+    } else {
+      console.log(`Incorrect. The correct answer is: ${correctAnswers[i]}`);
+    }
+  }
+
+  console.log(`Quiz completed. Your score: ${score}/${questions.length}`);
+}
+
+// Example quiz data
+const quizQuestions: string[] = [
+  "What is the capital of Pakistan?",
+  "Which planet is known as the Red Planet?",
+  "What is the largest mammal in the world?",
+];
+
+const quizAnswers: string[] = ["Islamabad", "Mars", "Blue Whale"];
+
+// Run the quiz with the provided questions and answers
+runQuiz(quizQuestions, quizAnswers);
+
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------
