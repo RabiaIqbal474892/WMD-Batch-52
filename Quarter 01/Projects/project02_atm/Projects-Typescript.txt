@@ -1,0 +1,130 @@
+// Node LTS version
+
+npm init -y
+(You can customize your package.json)
+
+npm install typescript
+tsc --init
+// tsc -w
+npm install inquirer
+// npm i inquirer
+npm install @types/inquirer
+npm install chalk
+// npm i chalk
+npm install @types/chalk
+npm install ts-node
+
+npm install typescript inquirer chalk @types/inquirer @types/chalk ts-node
+
+npm install --save inquirer
+
+npm i --save-dev @types/inquirer
+
+npm i -D @types/inquirer
+
+npm i node-banner
+
+npm i gradient-string
+npm i @types/gradient-string -D
+// npm i --save-dev @types/gradient-string
+
+To run:
+node ./src/app.js
+
+-------------------------------------------------------------
+
+https://www.npmjs.com/package/node-banner
+
+npm install --save node-banner
+npm i node-banner
+
+https://www.npmjs.com/package/gradient-string
+
+npm i gradient-string
+// npm i --save-dev @types/gradient-string
+npm i @types/gradient-string -D
+
+https://github.com/sajid-khan-afridi/configure
+
+npm publish (1:05:25 / 1:57:28) - (https://www.youtube.com/watch?v=W5b9OUM9Izg)
+
+npx packageName
+npx calculator_new2
+
+----------------------------------------------------------------------------------------------------------------
+
+Changes needed in tsconfig.json
+on line 14:	set	"target": "ES2022",
+on line 28:	set	"module": "NodeNext",		/* Specify what module code is generated. */
+on line 30:	set	"moduleResolution": "NodeNext",
+on line 29:	set	 "rootDir": "./src",
+
+----------------------------------------------------------------------------------------------------------------
+
+Optional change in tsconfig if you want to save your .js files in other directory.
+(Make folder in project - dist)
+on line 58:	uncomment	"outDir": "./dist",	/* Specify an output folder for emitted files. */
+
+(Make folder in project - dist)
+on line 29:	uncomment	"rootDir": "./src",	/* Specify the root folder within your source files. */
+
+----------------------------------------------------------------------------------------------------------------
+
+Change needed in package.json
+on line 03:	set	"type": "module",
+
+{
+  "name": "project02_atm",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+
+----------------------------------------------------------------------------------------------------------------
+
+To run:
+tsc index.ts
+node ./dist/index.js
+
+----------------------------------------------------------------------------------------------------------------
+
+in package.json
+on line 7
+"scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "clean": "rm -rf node_modules",
+    "start": "npm start ./dist/app.js"
+    "start": "node ./dist/app.js"
+  },
+
+----------------------------------------------------------------------------------------------------------------
+
+inquirer
+  .prompt([
+    /* Pass your questions in here */
+  ])
+  .then((answers) => {
+    // Use user feedback for... whatever!!
+  })
+  .catch((error) => {
+    if (error.isTtyError) {
+      // Prompt couldn't be rendered in the current environment
+    } else {
+      // Something else went wrong
+    }
+  });
+
+.then -------- promises
+
+promise - fulfil or reject
+
+
+----------------------------------------------------------------------------------------------------------------
+
+.gitignore
+
+node modules
+.env
+

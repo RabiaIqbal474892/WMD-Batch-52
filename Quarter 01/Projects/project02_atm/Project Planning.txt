@@ -1,0 +1,14 @@
+Project planning
+
+// Data structure to store customer information
+// Initialize an array to store customer data
+// Global variable to store the current customer (if authenticated)
+// Function to generate a random debit card number
+// Function to open a new account
+// Function to save customer data to a JSON file
+// Function to retrieve customer data from a JSON file
+// Function to authenticate the user
+// ATM functionalities
+// Implement withdraw and deposit functions here
+
+// Entry point Main function
