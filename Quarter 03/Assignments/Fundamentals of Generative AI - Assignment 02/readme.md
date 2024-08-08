@@ -4,7 +4,7 @@ https://docs.google.com/document/d/1S5eEFaBtLJ4q3m5N_rft6zrcVANlDreG/edit?usp=dr
 
 The links below are of Panaversity
 
-I hold no copyrights on this material and I am only uploading for my pesonal use.
+I hold no copyrights on this material and I am only uploading for my personal use.
 
 https://github.com/panaversity/learn-applied-generative-ai-fundamentals/tree/main
 
