@@ -1,4 +1,5 @@
-https://drive.google.com/drive/u/1/folders/1zHoi4BCLqVs72G-l-VzCZmAqL5U7hxrh
+
+https://docs.google.com/document/d/1S5eEFaBtLJ4q3m5N_rft6zrcVANlDreG/edit?usp=drive_link&ouid=105378049454874601403&rtpof=true&sd=true
 
 
 The links below are of Panaversity
